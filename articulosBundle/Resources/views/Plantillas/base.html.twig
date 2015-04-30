@@ -1,0 +1,20 @@
+<html>
+<head>
+    <meta http-equiv=”Content-Type” content=”text/html; charset=utf-8”/>
+
+    {% block stylesheets %}{% endblock %}
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}"/>
+    {% include "articulosBundle::/Plantillas/stylesheets.html.twig" %}
+    {% block javascripts %}{% endblock %}
+
+</head>
+<body>
+{% block body %}{% endblock %}
+{% block footer %}
+    <footer id="footer" class="modal-footer">
+    <div class="text-center"> {{ "now"|date("Y") }} <span class="fa fa-copyright"/> Mitienda. </div>
+        </footer>
+{% endblock %}
+
+</body>
+</html>

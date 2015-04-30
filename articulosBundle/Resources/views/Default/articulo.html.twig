@@ -1,0 +1,30 @@
+{% extends "articulosBundle::/Plantillas/base.html.twig" %}
+
+{% block stylesheets %}
+
+{% endblock stylesheets %}
+
+{% block body %}
+    <div class="container-fluid">
+        {% if articulo.id is defined %}
+            <h1 class="h1">{{ articulo.nombre | upper }}</h1>
+            <ul class="list-unstyled">
+                <li>Id: {{ articulo.id }}</li>
+                <li>Precio: {{ articulo.precio }} <span class="fa fa-euro" </li>
+            </ul>
+            <button class="btn btn-default"
+                    onclick="location.href='{{ path('articulos_lista_id',{'id' : articulo.id -1}) }}'"> Anterior
+                artículo
+            </button>
+            <button class="btn btn-default"
+                    onclick="location.href='{{ path('articulos_lista_id',{'id' : articulo.id +1}) }}'"> Siguiente
+                artículo
+            </button>
+        {% endif %}
+        {% for flashMessage in app.session.flashbag.get('NoExiste') %}
+            <div class="alert alert-warning">
+                {{ flashMessage }}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock body %}

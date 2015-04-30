@@ -1,0 +1,20 @@
+articulos_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: articulosBundle:Default:index }
+
+articulos_lista:
+    path:     /articulos/
+    defaults: { _controller: articulosBundle:Articulos:listar }
+
+articulos_lista_id:
+    path:     /articulos/{id}
+    defaults: { _controller: articulosBundle:Articulos:buscaId }
+    requirements: { id: "\d+" }
+
+articulos_lista_nombre:
+    path:     /articulos/{nombre}
+    defaults: { _controller: articulosBundle:Articulos:buscaNombre }
+
+articulos_buscar:
+    path:     /buscar
+    defaults: { _controller: articulosBundle:Articulos:buscar }

@@ -1,0 +1,8 @@
+
+{%  for articulo in articulos %}
+<ul>
+<li> {{ articulo.id }} </li>
+    <li> {{ articulo.nombre | capitalize }} </li>
+    <li> {{ articulo.precio}} </li>
+</ul>
+{% endfor %}
